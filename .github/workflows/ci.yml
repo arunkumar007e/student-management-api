@@ -26,3 +26,6 @@ jobs:
 
       - name: Build and test
         run: chmod +x mvnw && ./mvnw --batch-mode verify
+
+      - name: Docker Build
+        run: docker build -t student-management-api:1.0 .
