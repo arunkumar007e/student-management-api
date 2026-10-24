@@ -37,6 +37,10 @@ jobs:
           username: ${{ vars.DOCKER_USER_NAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Docker Push
-
-        run: docker push arunkumar78/student-management-api:1.0
+      
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: arunkumar78/student-management-api:1.0
